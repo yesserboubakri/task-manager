@@ -374,6 +374,20 @@ Each drill will be documented here with symptoms, investigation steps and the fi
 
 ---
 
+## Troubleshooting log
+
+Real problems hit while building the project, and how each one was solved.
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| `git@github.com: Permission denied (publickey)` | The public key was never added to my GitHub account. `ssh -v` showed the key was offered, but GitHub did not know it | Added `~/.ssh/id_ed25519.pub` in GitHub → Settings → SSH keys |
+| `ERROR: Repository not found` on `git push` | The repository did not exist on GitHub yet (GitHub returns the same message for a missing repo and for missing access) | Created the repository, then pushed |
+| `Cannot find module ... server.js` (`MODULE_NOT_FOUND`) | Ran `node server.js` from the wrong directory | `cd backend` first |
+| `password authentication failed for user` | Forgot the role password (PostgreSQL only stores a hash) | Reset it as the admin with `\password` |
+| `ssh -T git@github.com` hung, then `Could not resolve hostname` | TODO | TODO |
+
+**Lesson:** read the error literally, and separate DNS problems, network problems and authentication problems before changing anything.
+
 ## Author
 
 **Yesser Boubakri**: [github.com/yesserboubakri](https://github.com/yesserboubakri)
