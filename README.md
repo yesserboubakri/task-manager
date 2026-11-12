@@ -43,8 +43,8 @@ The application is intentionally simple. The goal of the project is **how it is 
 - ✅ Git repository on GitHub, SSH authentication
 - ✅ PostgreSQL 16 installed locally, dedicated non-admin role and database
 - ✅ Express server with `GET /health`, port read from the `PORT` environment variable
-- 🚧 `/health` checks the database connection and reports it (the app must not crash when the database is down)
-- 🔜 Configuration from `.env`, `.env.example`
+- ✅ `/health` checks the database connection and reports it (the app must not crash when the database is down)
+- ✅ Configuration from `.env`, `.env.example`
 - 🔜 User registration and login (JWT)
 - 🔜 Tasks CRUD
 - 🔜 React frontend
@@ -199,11 +199,11 @@ The application is configured **only through environment variables**. Nothing se
 | Variable | Purpose | Status |
 |----------|---------|--------|
 | `PORT` | Port the API listens on (default `3000`) | ✅ |
-| `DB_HOST` | PostgreSQL host | 🔜 |
-| `DB_PORT` | PostgreSQL port (default `5432`) | 🔜 |
-| `DB_NAME` | Database name | 🔜 |
-| `DB_USER` | Database user | 🔜 |
-| `DB_PASSWORD` | Database password | 🔜 |
+| `DB_HOST` | PostgreSQL host | ✅ |
+| `DB_PORT` | PostgreSQL port (default `5432`) | ✅ |
+| `DB_NAME` | Database name | ✅ |
+| `DB_USER` | Database user | ✅ |
+| `DB_PASSWORD` | Database password | ✅ |
 | `JWT_SECRET` | Secret used to sign login tokens | 🔜 |
 
 Locally the values live in a `.env` file that is listed in `.gitignore`. A `.env.example` file (variable names only, no values) is committed so anyone can see what is required.
@@ -214,7 +214,7 @@ Locally the values live in a `.env` file that is listed in `.gitignore`. A `.env
 
 | Method | Route | Description | Auth | Status |
 |--------|-------|-------------|------|--------|
-| GET | `/health` | Service and database health | No | 🚧 |
+| GET | `/health` | Service and database health | No | ✅ |
 | POST | `/api/auth/register` | Create an account | No | 🔜 |
 | POST | `/api/auth/login` | Log in, receive a token | No | 🔜 |
 | GET | `/api/tasks` | List my tasks | Yes | 🔜 |
