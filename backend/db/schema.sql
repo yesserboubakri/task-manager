@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS users (
+  id            INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  email         VARCHAR(255) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id          INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  user_id     INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title       VARCHAR(255) NOT NULL,
+  description TEXT,
+  status      VARCHAR(20) NOT NULL DEFAULT 'todo',
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
