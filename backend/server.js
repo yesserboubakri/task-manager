@@ -1,21 +1,12 @@
 const express = require('express');
-const { Pool } = require('pg');
+const pool = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  connectionTimeoutMillis: 2000,
-});
 
-pool.on('error', (err) => {
-  console.error('Database pool error:', err.message);
-});
+
+
 
 app.get('/health', async (req, res) => {
   try {
