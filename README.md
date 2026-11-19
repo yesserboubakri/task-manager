@@ -29,7 +29,7 @@ The application is intentionally simple. The goal of the project is **how it is 
 
 | # | Phase | Goal | Status |
 |---|-------|------|--------|
-| 1 | Application | React frontend, Node/Express REST API, PostgreSQL | 🚧 |
+| 1 | Application | React frontend, Node/Express REST API, PostgreSQL | ✅ |
 | 2 | Linux | Deploy manually on a Linux VM (SSH, systemd, logs) | 🔜 |
 | 3 | Docker | Containerize frontend, backend and database with Docker Compose | 🔜 |
 | 4 | AWS | Run on EC2, then add VPC, IAM, RDS, S3, Load Balancer, CloudWatch | 🔜 |
@@ -47,7 +47,7 @@ The application is intentionally simple. The goal of the project is **how it is 
 - ✅ Configuration from `.env`, `.env.example`
 - ✅ User registration and login (JWT)
 - ✅ Tasks CRUD
-- 🔜 React frontend
+- ✅ React frontend
 
 ---
 
@@ -115,10 +115,17 @@ task-manager/
 │   ├── server.js
 │   ├── package.json
 │   └── .env.example
+├── frontend/
+│   ├── index.html
+│   ├── vite.config.js
+│   └── src/
+│       ├── main.jsx
+│       ├── api.js
+│       ├── App.jsx
+│       └── style.css
 ├── scripts/
 │   └── smoke-test.sh
-└── README.md   
-
+└── README.md
 ```
 
 **Target**
